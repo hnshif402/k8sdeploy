@@ -1,0 +1,9 @@
+1、console下通过virt-install安装vm
+virt-install --name=vm1 --ram 4096 --vcpus=4 \
+--disk path=/mydata/data2/vms/vm1/vm1.qcow2,size=15,format=qcow2,bus=virtio \
+--location=/mydata/data2/CentOS-8.2.2004-x86_64-minimal.iso --network bridge=virbr0,model=virtio \
+--graphics=none --console=pty,target_type=serial \
+--extra-args="console=tty0 console=ttyS0"
+
+2、复制vm
+virt-clone --original vm1 --name vm2 --file /mydata/data2/vms/vm2/vm2.qcow2
