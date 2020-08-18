@@ -257,9 +257,9 @@ http://192.168.122.100:8080
 
 ### 3 理解
 
-1、keepalived的功能是实现两台主机通过vip去实现访问变换的无缝切换，两台主机通过vip实现HA;
+1、keepalived的功能是通过vip去实现从一台主机切到另一台主机的无缝切换，两台主机通过vip实现HA;
 
-2、keepalived要与nginx部署在一起，通用keepalived的vip来实现部署在两台服务器上nginx的HA;
+2、nginx要与keepalived部署在一起，通用keepalived的vip来实现部署在两台服务器上nginx的HA;
 
 3、当一台主机上的nginx出现故障进程丢失(check_nginx实现)，则会将这台主机的keepalived进程停掉，则vip漂移到另一台keepalived上;
 
